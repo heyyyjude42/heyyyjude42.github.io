@@ -1,37 +1,73 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|Lora:400,400i');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
-
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600');
 
 body {
   background: #fafafa;
-  padding-top: 5em;
-  display: flex;
+  padding: 0;
+  margin: 0;
   justify-content: left;
-  font-family: "Crimson Text", serif;
+  font-family: "Lora", serif;
   font-style: "book";
   font-weight: "book";
   color: #333;
 }
 
+a {
+  color: inherit;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  font-size: 19px;
+  text-decoration: none;
+  border-bottom: 0.1px solid #877e71;
+  font-variant: small-caps;
+  color: #877e71;
+}
+
+ul {
+  margin-top: 5px;
+}
+
+li {
+  margin: 0.5em 0;
+  line-height: 180%;
+  font-size: 15px;
+}
+
+#header {
+  background-color: #302e2e;
+  padding-top: 7em;
+  padding-bottom: 4em;
+}
+
+#header p {
+  color: #fafafa;
+}
+
 #title {
   overflow: hidden;
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Playfair Display", serif;
   display: inline;
-  color: #fafafa;
-  background-color: #333;
   font-size: 3em;
   border-right: .15em solid transparent;
-  padding: 10px 20px 10px 25px;
   animation:
-    blink-caret 0.8s step-end 3;
+    blink-caret 0.7s step-end 4;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  display: inline;
+  font-size: 2.3em;
+  color: #302e2e;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-.fade-in {
+.fade-in-late {
   opacity:0;
   -webkit-animation:fadeIn ease-in 1;
   -moz-animation:fadeIn ease-in 1;
@@ -45,48 +81,111 @@ body {
   -moz-animation-duration:1s;
   animation-duration:1s;
 
-  -webkit-animation-delay: 1.4s;
-  -moz-animation-delay: 1.4s;
-  animation-delay: 1.4s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
 }
 
-.active {
-  background-color: orange;
+.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 0.8;
+  -moz-animation:fadeIn ease-in 0.8;
+  animation:fadeIn ease-in 0.8;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.8s;
+  -moz-animation-duration:0.8s;
+  animation-duration:0.8s;
+
+  -webkit-animation-delay: 1.3s;
+  -moz-animation-delay: 1.3s;
+  animation-delay: 1.3s;
 }
 
-#subtitle {
-  padding-left: 25px;
-  margin-top: 30px;
-  font-style: italic;
+.small {
+  font-size: 11px;
 }
 
-#menu {
-  width: 12%;
-  position: fixed;
-  top: 4.5em;
-  left: 0em;
+.subtitle {
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-#menu a {
-  color: #333;
-  font-style: italic;
-  font-size: 18px;
-  text-decoration: none;
-  border-left: 7px solid #333;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-bottom: 1.5em;
+    width: 100%;
 }
 
-#menu div {
-  margin-bottom: 17px;
+section {
+  padding-bottom: 4em;
 }
 
-#content {
+p {
+  font-size: 15px;
+  line-height: 175%;
+}
+
+#content > div{
+  padding-left: 10%;
+  padding-right: 30%;
+  display: block;
+}
+
+footer {
+  background-color: #302e2e;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 10em;
+  padding-top: 5em;
+  padding-bottom: 7em;
+  align-items: center;
+}
+
+footer p, footer a {
+  margin-bottom: 0;
+  color: #a59e9a;
+  font-family: "Josefin Sans", serif;
+  text-align: center;
+}
+
+/* EDUCATION */
+
+.education-block {
+  display: flex;
+}
+
+.education-block p {
+  margin: 0px;
+}
+
+.education-year {
+  float: left;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: right;
+  font-size: 20px;
+  width: 15%;
+}
+
+.education-school {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+}
+
+.education-desc {
+  float: right;
+  padding-left: 3em;
   width: 80%;
-  height: auto;
-  position: absolute;
-  right: 0;
 }
 
 /* The typewriter cursor effect */
