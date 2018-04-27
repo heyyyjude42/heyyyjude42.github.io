@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600');
 
 body {
-  background: #fafafa;
+  background: #fcfbf9;
   padding: 0;
   margin: 0;
   justify-content: left;
@@ -15,15 +15,28 @@ body {
   color: #333;
 }
 
+.fade-in-late > div:nth-child(even) {
+  background-color: #ede8e3;
+}
+
+.fade-in-late > div {
+  padding: 3em 0;
+}
+
 a {
   color: inherit;
   text-transform: lowercase;
   letter-spacing: 1px;
   font-size: 19px;
   text-decoration: none;
-  border-bottom: 0.1px solid #877e71;
+  border-bottom: 0.1px solid #ad7e24;
   font-variant: small-caps;
-  color: #877e71;
+  color: #ad7e24;
+}
+
+a:hover {
+  color: #75401c;
+  border-bottom: 0.1px solid #75401c;
 }
 
 ul {
@@ -43,7 +56,7 @@ li {
 }
 
 #header p {
-  color: #fafafa;
+  color: #fcfbf9;
 }
 
 #title {
@@ -66,7 +79,7 @@ li {
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
+/*
 .fade-in-late {
   opacity:0;
   -webkit-animation:fadeIn ease-in 1;
@@ -104,7 +117,7 @@ li {
   -moz-animation-delay: 1.3s;
   animation-delay: 1.3s;
 }
-
+*/
 .small {
   font-size: 11px;
 }
@@ -133,7 +146,7 @@ p {
   line-height: 175%;
 }
 
-#content > div{
+.fade-in-late > div, #header{
   padding-left: 10%;
   padding-right: 30%;
   display: block;
