@@ -4,6 +4,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="index.css" rel="stylesheet">
 <html>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="js/scrollreveal.min.js"></script>
+<script>
+  window.sr = ScrollReveal({ reset: true });
+</script>
+
 <body onload="typeWriter()">
 
 <div id="content">
@@ -42,7 +49,7 @@
   </div>
 
   <div class="fade-in-late page-content">
-    <div>
+    <div class="reveal">
     <p class="subtitle">Programmer by day, scribbler by night.</p>
     <p>
       I taught myself Adobe InDesign when I was 14, and since then, I've always wanted to spend my life creating. hardly a day ever passes without thinking about my next project—whether it's the latest publication I'm working on, or more apps to supplement my never-ending escapades in Dungeons and Dragons. As a Beijing-born Canadian, I've crossed the world countless times to interact with people from all walks of life. (Except for you, South America. You're next.)
@@ -52,7 +59,7 @@
     </p>
   </div>
 
-    <div>
+    <div class="reveal">
     <p class="heading">Education</p>
     <hr/>
     <div class="education-block">
@@ -87,19 +94,19 @@
     </div>
   </div>
 
-    <div>
+    <div class="reveal">
     <p class="heading">Experience</p>
     <hr/>
     <p>hello</p>
   </div>
 
-    <div>
+    <div class="reveal">
     <p class="heading">Skills</p>
     <hr/>
     <p>hello</p>
   </div>
 
-    <div>
+    <div class="reveal">
     <p class="heading">Projects</p>
     <hr/>
     <p>hello</p>
@@ -114,35 +121,6 @@
   <p class="small subtitle">LAST UPDATED ON 04/27/18</p>
 </footer>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 600, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
 <script>
 var i = 0;
 var txt = "Hi, I'm Julie.";
@@ -155,6 +133,10 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
+</script>
+
+<script>
+  sr.reveal('.reveal', { duration: 1500, scale: 1, distance: '10vh' });
 </script>
 
 </body>

@@ -23,10 +23,6 @@ body {
   color: #333;
 }
 
-.page-content > div:nth-child(even) {
-  background-color: #d7e8e3;
-}
-
 .page-content > div {
   padding: 3em 0;
 }
@@ -43,8 +39,8 @@ a {
 }
 
 a:hover {
-  color: #73a395;
-  border-bottom: 0.1px solid #73a395;
+  color: #e2830f;
+  border-bottom: 0.1px solid #e2830f;
 }
 
 footer a, footer a:hover {
