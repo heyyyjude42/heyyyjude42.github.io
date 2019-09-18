@@ -3,80 +3,97 @@
 
 
 /*
-CHARCOAL CHOCOLATE: #302e2e
+BACKGROUND: #40312f
 OFFWHITE: #fcfbf9
-TEAL HIGHLIGHT: #d7e8e3;
-DARKER TEAL: #73a395;
-ORANGE: #e2440f;
+TEXT: #d4cac9
 */
 
 body {
-  background: #fcfbf9;
+  background: #40312f;
   padding: 0;
   margin: 0;
   justify-content: left;
   font-family: "Crimson Text", serif;
   font-style: "book";
   font-weight: "book";
-  font-size: 105%;
-  color: #333;
+  font-size: 115%;
+  color: #d4cac9;
 }
 
-#header {
-  margin-bottom: 4.5em;
+::selection {
+  background: #c7b8b7;
 }
 
-#title {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-  font-size: 3em;
+::-moz-selection { /* Code for Firefox */
+  background: #c7b8b7;
 }
 
-#title-sub {
-  /* font-family: "Josefin Sans", sans-serif; */
-  letter-spacing: 1px;
-  font-style: italic;
-  font-size: 100%;
-  margin-top: 1em;
-  line-height: 150%;
-}
-
-#page-content {
-  padding: 6em;
-  padding-right: 18em;
-}
-
-#intro {
-  margin-top: 4em;
-}
-
-.subtitle {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 130%;
-}
-
-.section-body {
-  margin-left: 2em;
-}
-
-#toc-container {
-  background: transparent;
-  display: table;
-  font-size: 95%;
-  margin-bottom: 1em;
-  padding: 20px;
-  width: auto;
-  position: fixed;
-  height: 100%;
-  right: 0;
+#parallax-backgrounds img {
+  width: 100%;
+  position: absolute;
   top: 0;
-  text-align: right;
-  line-height: 200%;
-  padding-top: 30%;
+  left: 0;
 }
 
-p {
-  line-height: 175%;
+#menu {
+  width: 70%;
+  padding-left: 15%;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  color: #40312f;
+}
+
+#menu a {
+  border-bottom: 0px;
+  color: #695d54;
+  padding: 0 1.5em;
+}
+
+#menu a:hover {
+  color: #de6f7a;
+}
+
+.horizontal-flex {
+  display: flex;
+  justify-content: center;
+}
+
+#title-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 200%;
+}
+
+#title-contents {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  color: #40312f;
+}
+
+.title-sub {
+  font-size: 40%;
+  letter-spacing: 1px;
+  line-height: 200%;
+}
+
+#home-body {
+  position: absolute;
+  padding: 4em 0;
+  background: #40312f;
+  line-height: 160%;
+}
+
+.title {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 160%;
 }
 
 a {
@@ -86,29 +103,102 @@ a {
   font-size: 80%;
   text-decoration: none;
   border-bottom: 0.1px solid #a19999;
-  color: #302e2e;
+  color: #b8aba9;
 }
 
 a:hover {
-  color: #e2440f;
-  border-bottom: 0.1px solid #e2440f;
+  color: #c49da1;
+  border-bottom: 0.1px solid #c49da1;
 }
 
-footer {
-  background-color: #302e2e;
-  width: 100%;
-  margin-bottom: 0;
-  margin-top: 10em;
-  padding-top: 5em;
-  padding-bottom: 7em;
-  align-items: center;
+.section-block {
+  display: flex;
+  margin: 0 0 0 -2.5em;
 }
 
-footer p, footer a {
-  margin-bottom: 0;
-  color: #a59e9a;
-  font-family: "Josefin Sans", serif;
-  font-size: 80%;
-  letter-spacing: 2px;
+.section-block p {
+  margin: 0px;
+}
+
+.section-subsection {
+  font-family: "Josefin Sans", sans-serif;
+  float: left;
+  text-align: right;
+  width: 20%;
+  line-height: 210%;
+  color: #b58b94;
+  font-size: 90%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.section-caption {
+font-family: "Crimson Text", serif;
+  font-size: 120%;
+  font-style: italic;
+  line-height: 130%;
+  color: #b58b94;
+}
+
+.section-desc {
+  float: right;
+  padding-left: 2em;
+  width: 80%;
+}
+
+.section-subcaption {
+  font-family: "Josefin Sans", sans-serif;
+  padding-bottom: 0.5em;
+  font-size: 90%;
+  line-height: 160%;
+  /* color: #b58b94; */
+}
+
+.footer-item {
+  padding: 2em;
   text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 90%;
+  letter-spacing: 2px;
+  line-height: 200%;
+}
+
+.footer-item a {
+  border-bottom: 0px;
+}
+
+.footer-item i {
+  font-size: 36px;
+}
+
+.color-block:nth-of-type(2n) {
+  background: #fcfbf9;
+  color: #40312f;
+}
+
+.color-block:nth-of-type(2n) .section-subsection {
+  color: #c74664;
+}
+/*
+.color-block:nth-of-type(2n) .section-subcaption {
+  color: #c74664;
+} */
+
+.color-block:nth-of-type(2n) .section-caption {
+  color: #c74664;
+}
+
+.color-block:nth-of-type(2n) a {
+  color: #5e4e4b;
+  border-bottom: 0.1px solid #856f6b;
+}
+
+.color-block:nth-of-type(2n) a:hover {
+  color: #de6f7a;
+  border-bottom: 0.1px solid #de6f7a;
+}
+
+.color-block {
+   padding: 0 20%;
 }
