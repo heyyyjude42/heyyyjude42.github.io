@@ -49,12 +49,12 @@ body {
   font-size: 80%;
   text-decoration: none;
   border-bottom: 0.1px solid #a19999;
-  color: #40312f;
+  color: #5e4e4b;
 }
 
 .content-box p a:hover {
-  color: #c49da1;
-  border-bottom: 0.1px solid #c49da1;
+  color: #de6f7a;
+  border-bottom: 0.1px solid #de6f7a;
 }
 
 .horizontal-flex {
@@ -87,6 +87,17 @@ body {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 800px) {
+  #portfolio {
+    grid-template-columns: 1fr;
+  }
+
+  .content-box {
+    padding: 0 10%;
+    font-size: 80%;
+  }
 }
 
 .portfolio-item {
