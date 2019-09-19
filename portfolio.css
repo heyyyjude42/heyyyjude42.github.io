@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600');
+
+body {
+  background: #fcfbf9;
+  padding: 0;
+  margin: 0;
+  justify-content: left;
+  font-family: "Crimson Text", serif;
+  font-style: "book";
+  font-weight: "book";
+  font-size: 115%;
+  color: #40312f;
+}
+
+#menu {
+  width: 70%;
+  padding-left: 15%;
+  margin-top: 30px;
+  text-align: center;
+  color: #40312f;
+}
+
+#menu a {
+  border-bottom: 0px;
+  color: #695d54;
+  padding: 0 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 80%;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  color: #de6f7a;
+}
+
+::selection {
+  background: #c7b8b7;
+}
+
+::-moz-selection {
+  background: #c7b8b7;
+}
+/*
+a {
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 80%;
+  text-decoration: none;
+  border-bottom: 0.1px solid #a19999;
+  color: #b8aba9;
+}
+
+a:hover {
+  color: #c49da1;
+  border-bottom: 0.1px solid #c49da1;
+} */
+
+.horizontal-flex {
+  display: flex;
+  justify-content: center;
+}
+
+#title-box {
+  margin-top: 3.5em;
+}
+
+.title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 120%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#portfolio {
+  padding: 3em 4em;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8em;
+  padding-bottom: 2em;
+  font-size: 90%;
+}
+
+.portfolio-item:hover {
+  background: #f5ede6;
+}
+
+.portfolio-item img {
+  width: 100%;
+}
+
+.portfolio-item-title {
+  font-family: "Crimson Text", serif;
+  font-size: 140%;
+  font-style: italic;
+  line-height: 130%;
+  color: #c74664;
+  margin-top: 1em;
+}
+
+.portfolio-item-subtitle {
+  font-family: "Josefin Sans", sans-serif;
+  padding-bottom: 0.5em;
+  font-size: 90%;
+  line-height: 160%;
+}

@@ -24,7 +24,7 @@ body {
   background: #c7b8b7;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
   background: #c7b8b7;
 }
 
@@ -134,7 +134,7 @@ a:hover {
 }
 
 .section-caption {
-font-family: "Crimson Text", serif;
+  font-family: "Crimson Text", serif;
   font-size: 120%;
   font-style: italic;
   line-height: 130%;
