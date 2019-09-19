@@ -69,10 +69,18 @@ a:hover {
 
 .title {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 120%;
+  font-size: 110%;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   text-align: center;
+}
+
+.subtitle {
+  padding-top: 1em;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  color: #695d54;
 }
 
 #portfolio {
@@ -98,6 +106,12 @@ a:hover {
   width: 100%;
 }
 
+.portfolio-item a {
+  color: inherit;
+  border-bottom: 0px;
+  text-decoration: none;
+}
+
 .portfolio-item-title {
   font-family: "Crimson Text", serif;
   font-size: 140%;
@@ -112,4 +126,35 @@ a:hover {
   padding-bottom: 0.5em;
   font-size: 90%;
   line-height: 160%;
+}
+
+.content-box {
+  margin-top: 3em;
+  padding: 0 20%;
+  margin-bottom: 7em;
+}
+
+.img-float-right {
+  float: right;
+  width: 60%;
+  padding: 0.5em 0em 1em 2em;
+}
+
+.img-float-center {
+  width: 100%;
+}
+
+.img-float-left {
+  width: 60%;
+  float: left;
+  padding: 0.5em 2em 1em 0em;
+}
+
+.content-caption {
+    font-family: "Crimson Text", serif;
+    font-size: 140%;
+    font-style: italic;
+    line-height: 130%;
+    color: #c74664;
+    margin-top: 1em;
 }
