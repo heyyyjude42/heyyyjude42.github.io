@@ -1,0 +1,103 @@
+<title>Julie Wang | Designs for Publishing</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="../portfolio.css" rel="stylesheet">
+<link href="portfolio.css" rel="stylesheet">
+<html>
+<body>
+  <div id="menu">
+    <div class="horizontal-flex">
+      <a href="../index.html">home</a>
+      <a href="../portfolio.html">portfolio</a>
+      <a href="../assets/Julie_Wang_Resume.pdf">resume</a>
+      <a href="mailto:julie_wang1@brown.edu">email</a>
+      <a href="https://www.linkedin.com/in/julie-wang-820b2314a/">linkedin</a>
+    </div>
+    <hr>
+  </div>
+
+  <div id="title-box">
+    <div class="title">MYSTERY DUNGEON</div>
+    <div class="subtitle">Software Engineering</div>
+  </div>
+
+  <div class="content-box">
+    <div>
+      <p>As an avid fan of Dungeons & Dragons (who sadly hasn't gotten to play in a while), I've always been figuring out a way to reduce the number of tabs I have to navigate between. I get to add a new spell? Great! Let's open all these pages with spells that sound cool and... ah... I need to pick an animal companion now, and <i>there are all these options...</i></p>
+
+      <p>The next thing I know, I have 30 tabs open and we've barely started. It's not just me, either—and when Google Chrome can't keep up with us, then it's definitely time to change things up.</p>
+    </div>
+
+    <div class="content-caption">Initial Idea & Conception</div>
+    <div>
+      <p>When I first learned how to program, I immediately set out to do a Dungeons and Dragons project on my own. It started off in Java, which was the first language I learned. In my naiveness, I began with an app where dungeon masters could keep track of players and make their own enemy encounters. It sounded fine on paper, except I had made it so inflexible to the point where adding enemies was a laborious process, and had hardcoded too many things to make changing player fields next to impossible.</p>
+
+      <p>I became exposed to more D&D online tools then, and realized other people had already done the same thing. A few months later, when I learned React, a new idea began to form: all these tools were for <i>planning</i> purposes, but nothing quite ever adapted to the organicness of a real campaign. The tools were fine and dandy up until the campaign started, and then the story is at the mercy of the players who tell it. </p>
+
+      <p>My first prototype was named <a href="https://www.juliewang.me/nat20">Nat20</a>, much to the distaste of my friends. The idea was that the user could type anything and the app would collate any and all matches, but I was using JSON to store the entire fifth edition compendium, which had enough content to be a textbook on its own. The app was slow, and it was difficult to search within a single category. It was alright when the page finally loaded, but it wasn't good enough to be used.</p>
+
+      <p>I kept pondering about this idea over the next year, and with more experience under my belt, revisited this app as my term project for Software Engineering. We'd learned SQL databases and more optimized algorithms at this point, and so, I tackled this project again with the love and support of three teammates. And this is what we built.</p>
+    </div>
+
+    <div class="content-caption">Feature: Search</div>
+    <div>
+      <p>I created my own SQL database using BeautifulSoup and Python, which I used to scrape data about spells, monsters, and feats off the D&D wiki. Then, I wrote my own search commands to parse user input as search terms:</p>
+      <img class="img-float-center" src="../assets/portfolio/DnD-Simple-Search.jpeg">
+      <p>The interface is organized like a REPL, but we like to call it a SuperREPL. As you can see, there were multiple search results for the command "s monsters bear", which translates to "search in monsters the term bear". <i>Note: s can also be substituted with search for new users.</i></p>
+      <p>The user can hover over any of the options to see more information about it: </p>
+      <img class="img-float-center" src="../assets/portfolio/DnD-Hover-Details.jpeg">
+      <p>If the text overflows the tooltip, the box is scrollable.</p>
+      <p>What if there was only one result, you ask? It just displays that information straight-up:</p>
+      <img class="img-float-center" src="../assets/portfolio/DnD-Single-Search.jpeg">
+      <p>Here, note that I didn't have to specify a category first. If there's only one command after "search", then it automatically checks all of them.</p>
+      <p>What was more intriguing to me, however, was being able to filter results. Some websites out there do that, but through a complex menu of toggles and buttons to get exactly what I want. Inspired by rapid REPL commands, I also added more parsing features: </p>
+      <img class="img-float-center" src="../assets/portfolio/DnD-Search-Operators.jpeg">
+      <p>This search expression asks for all Druid spells in levels 7 to 8. If I wanted to, I could have also specified the spell school or components needed or any property, really—all the data is saved in the database as a separate column. Of course, this also works with other categories. </p>
+      <p>With this many results, we also implemented a feature that allows users to sticky search results to the sidebar.</p>
+    </div>
+
+    <div class="content-caption">Feature: Random Dungeon Generator</div>
+    <div>
+      <p>Some dungeon masters like to spend hours building a map of their world for their adventurers. Some others prefer to keep it simple. No matter what, all dungeons start from some sort of inspiration, and we made a quick and easy graphical dungeon generator to do precisely this: </p>
+      <img class="img-float-center" src="../assets/portfolio/DnD-Dungeon-Generator-Large.jpeg">
+      <p>The user can change the dimensions, room size, and theme of the dungeon. They can also choose to include loot or traps. (Hovering over the treasure chest or bear trap icons will reveal more information about what they entail.) Also, did I mention you can change the theme?</p>
+      <img class="img-float-center" style="margin-bottom:1.5em" src="../assets/portfolio/DnD-Dungeon-Generator-Medium.jpeg">
+      <img class="img-float-center" src="../assets/portfolio/DnD-Dungeon-Generator-Small.jpeg">
+      <p>There are a total of 14 themes, and the sprite resources came from Pokemon Mystery Dungeon, the namesake of this project. My partners built the backend for this generator (one can actually create an ASCII dungeon in the SuperREPL), but I made the entire frontend UI, including the algorithm that determines which blocks to use in which tiles. (I actually struggled a lot to come up with it, since it depends on whether its eight neighboring tiles are occupied or not.) In other words, I wrote a stupid amount of CSS.</p>
+      <p>In addition, there are also options to export the current tileset (saves to clipboard) and import a preexisting one (copy the same string in). </p>
+    </div>
+
+    <div class="content-caption">Feature: Random Encounter & Battle Manager</div>
+    <div>
+      <p>I also had a small role in our battle toolkit. The idea is that a dungeon master can instantly create an appropriately-difficult group of enemies (an "encounter") in a single command: </p>
+      <img class="img-float-center" src="../assets/portfolio/DnD-Battle-Manager.jpeg">
+      <p>The number given is the cumulative level of every adventurer in the party, which follows recommended guidelines for encounter difficulty. </p>
+      <p>To the right, you can see a battle manager pop up with this encounter. Starting a new encounter will clear it and replace it with the new one. Here, each table cell is editable; the dungeon master can edit health away at will, or add notes about each monster's position or condition. The table can also be collapsed by pressing "Battle Manager" again. </p>
+      <p>My role in this feature was implementing the last bridges of algorithmic logic and cleaning up the UI.</p>
+    </div>
+
+    <div class="content-caption">Other Features</div>
+    <div>
+      <p>There's a whole lot of other features that the final product had, such as a random NPC generator, which draws from an official Wizards of the Coast table. I didn't write these, but I was involved in planning out what features we needed to make a robust application that was the most helpful it could be. </p>
+      <img class="img-float-right" src="../assets/portfolio/DnD-Roll.jpeg">
+      <p>One other small feature I did write, however, was a simple function to roll dice. I love the physical feeling of rolling dice as much as the next person, but sometimes there's an intense calculation that takes too long to count. When a player is in a pinch, or just needs to roll a quick investigation check, they can also use this roll command to do so. It supports simple arithmetic and allows multiple expressions to be joined together in the equation.</p>
+    </div>
+
+    <div class="content-caption">Conclusion</div>
+    <div>
+      <p>Some big questions we asked ourselves while building this included: who is this for? Some features are obviously only for the dungeon master, such as the dungeon generator. But for the most part, it's an all-in-one swiss army knife that any player can utilize—especially the search and roll functions, which were made to be as universal as possible. </p>
+
+      <p>Another question was, how user friendly is this? Yes, I included a help command with more written documentation. And yes, I added many equivalent search terms (such as "enemies" evaluating to the same as "monsters") to not box in users to specific syntax. But at the end of the day, I figured that learnability was the key element. It's not too difficult to become familiar with the SuperREPL commands, and all of my groupmates (one of whom has never played D&D) caught on pretty fast. It's a small investment, but it's one I was willing to let users make for increased efficiency down the line. </p>
+
+      <p>I did, however, keep user friendliness in mind as much as possible while designing the GUI for the dungeon generator. The default values alone would be enough to generate a proper map, but the SuperREPL was more difficult since the aim was for users to get mostly everything they needed to know without having to move their hand away from the keyboard.</p>
+
+      <p>I didn't get too deep into the code itself, but everything was written and designed to be as extensible as possible. Our REPL is bridged by a command handler, which talks to a database proxy, which communicates with the actual database itself. Each feature is in a different handler registered through the REPL, and it's extremely easy adding in a new command or changing the name of an old one. In addition, this application was extensively tested using both JUnit and command line tests.</p>
+
+      <p>If you'd like to see the code, don't be afraid to reach out!</p>
+    </div>
+
+
+  </div>
+
+</body>
+</html>

@@ -42,21 +42,20 @@ body {
 ::-moz-selection {
   background: #c7b8b7;
 }
-/*
-a {
-  color: inherit;
+
+.content-box p a {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 80%;
   text-decoration: none;
   border-bottom: 0.1px solid #a19999;
-  color: #b8aba9;
+  color: #40312f;
 }
 
-a:hover {
+.content-box p a:hover {
   color: #c49da1;
   border-bottom: 0.1px solid #c49da1;
-} */
+}
 
 .horizontal-flex {
   display: flex;
