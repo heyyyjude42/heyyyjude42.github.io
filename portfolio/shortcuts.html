@@ -1,0 +1,53 @@
+<title>Julie Wang | Shortcuts</title>
+<link href="../portfolio.css" rel="stylesheet">
+<link href="portfolio.css" rel="stylesheet">
+<html>
+<body>
+  <div id="menu">
+    <div class="horizontal-flex">
+      <a href="../index.html">home</a>
+      <a href="../portfolio.html">portfolio</a>
+      <a href="../assets/Julie_Wang_Resume.pdf">resume</a>
+      <a href="mailto:julie_wang1@brown.edu">email</a>
+      <a href="https://www.linkedin.com/in/julie-wang-820b2314a/">linkedin</a>
+    </div>
+    <hr>
+  </div>
+
+  <div id="title-box">
+    <div class="title">SHORTCUTS</div>
+    <div class="subtitle">Just For Fun</div>
+  </div>
+
+  <div class="content-box">
+    <div>
+      <p>This is a React webapp that I built for fun, to help users discover new shortcuts for Adobe CC. It can be <a href="http://www.juliewang.me/shortcuts/">found online here</a>. The general premise is that the user can press keys on their keyboard, and based on what they press, the app tells them what that shortcut does in the currently selected application. It's still a work in progress in terms of data collection, but the general app framework is done—it's a proof of concept for now, but I very much hope to finish it.</p>
+    </div>
+
+    <div class="content-caption">Features</div>
+    <div>
+      <img class="img-float-right" src="../assets/portfolio/Shortcuts.jpg">
+      <p>The user can press whatever they want into the app—no textbox or anything required. A large caption will display what the current input is, such as <i>T</i>, or <i>Shift + F</i>, as pictured. I spent a lot of time working on edge cases here; as far as I'm aware, no shortcuts require two ASCII keys to be pressed together, and so inputting two back to back will simply reset in between and use the second character. For instance, if the user pressed <i>T</i>, and then <i>O</i>, then the interpreted input will only be <i>O</i>.</p>
+      <p>Keep in mind the same is true if modifiers are also applied: holding down <i>Shift + Alt +  T</i>, releasing only <i>T</i>, and then pressing <i>O</i> will automatically update the string to read <i>Shift + Alt + O</i>. It wouldn't just reset back to <i>O</i>. Furthermore, letting go of all the keys won't change the onscreen description, so users don't need to hold down the key in order to keep reading.</p>
+      <p>The shortcut description is updated live; anytime the user makes an additional input, the system evaluates what the final input should be, and looks up the corresponding shortcut in the database. All the data is stored as a JSON.</p>
+    </div>
+
+    <div class="content-caption">Inspiration</div>
+    <div>
+      <p>I say I taught myself InDesign, but the truth is I'm always learning. Adobe CC applications have infinite depth underneath their labyrinth of menus, toggles, and submenus. I still remember the first time I resized a textbox symmetrically, so that the textbox's position stayed fixed about the center while I resized. I had done it entirely by accident, but I tried to replicate what I did, and eventually stumbled across the right shortcut. (You just had to hold down the option key.) </p>
+      <p>I spent the next hour trying all the other modifiers with resizing. Shift just resized the frame proportionally; that I knew. Command also resized the contents of the frame along with it. Then I realized that holding option while dragging also duplicated an element, and... from there, the rest is history.</p>
+      <p>When I first learned React, this was the first project I set out to build. I wanted something clean, simple, and intuitive for people to just randomly stumble across keyboard shortcuts, instead of inputting them at random in an application waiting for something to happen. Knowing these truly speeds up your workflow, and I know it's helped me learn so many shortcuts in the process as well. </p>
+    </div>
+
+    <div class="content-caption">Conclusion</div>
+    <div>
+      <p>The greatest struggle I had was disabling other shortcuts that were built into the web browser. I successfully managed to disable most, but navigational ones (like close, switch tabs, and so forth) can't be disabled so easily. While the concept is fine for most things, it can be difficult to use this application just from accidentally navigating away or accidentally quitting the entire browser application.</p>
+      <p>The second thing was data scraping: I couldn't find an easy way to scrape shortcuts in the exact format I wanted, and so most of this is hand-made. As such, I actually haven't gotten very far into the data-collection process, which is why a lot of it is a bit lackluster. Nonetheless, it's still a prototype that I hope to finalize one day. </p>
+      <p>Once again, you can view this app online <a href="http://www.juliewang.me/shortcuts/">here</a>.</p>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
