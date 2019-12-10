@@ -2,6 +2,7 @@
 <link href="../portfolio.css" rel="stylesheet">
 <link href="portfolio.css" rel="stylesheet">
 <html>
+
 <body>
   <div id="menu">
     <div class="horizontal-flex">
@@ -16,47 +17,90 @@
 
   <div id="title-box">
     <div class="title">WALUIGI TIME</div>
-    <div class="subtitle">Computer Graphics Term Project</div>
+    <div class="subtitle">Computer Graphics Term Project / C++ & GLSL / Nov – Dec 2018</div>
   </div>
 
   <div class="content-box">
     <div>
-      <p>I worked in a group of three to build a Waluigi-themed virtual reality environment, using the rendering techniques we learned in a computer graphics course. Although a short template shader was provided to us as stencil code, everything else was up to us to build from scratch. </p>
-      <p>My primary role in this project was procedural scene generation, which included basically all the graphics that the user sees onscreen. All the fundamental shapes were drawn using OpenGL and GLSL, and used as building blocks for more advanced objects and texture mapping. Each element is randomly generated with some parameters, and placed algorithmically around the player. Outside of programming, I also hand-made all the texture assets. </p>
+      <p>I worked in a group of three to build a Waluigi-themed virtual reality environment, using the rendering
+        techniques we learned in a computer graphics course. Although a short template shader was provided to us as
+        stencil code, everything else was up to us to build from scratch. </p>
+      <p>My primary role in this project was procedural scene generation, which included basically all the graphics that
+        the user sees onscreen. All the fundamental shapes were drawn using OpenGL and GLSL, and used as building blocks
+        for more advanced objects and texture mapping. Each element is randomly generated with some parameters, and
+        placed algorithmically around the player. Outside of programming, I also hand-made all the texture assets. </p>
     </div>
 
     <div class="content-caption">Features</div>
     <div>
       <img class="img-float-right" src="../assets/portfolio/Waluigi-Time.jpg">
-      <p>This project was made with virtual reality in mind, and so the user take on the perspective of Waluigi from the Super Mario Bros video games series. (We considered adding in Waluigi's nose in the viewport, but decided it was too nauseous for the user.) The premise is that Waluigi is upset at not being invited to Smash Ultimate, and is taking his anger out at all of the other fighters who did get added.</p>
-      <p>Looking around, the user is surrounded in a Mario-esque environment, with floating targets in the air. The targets all depict a random Smash Bros fighter new to the franchise, and the user can hurl tennis balls at them using the VR remotes. The targets then give off a pseudo-randomly generated shatter effect upon being hit. Also, every time the user throws a tennis ball, a Waluigi-themed <a href="https://www.youtube.com/watch?v=dbe9WugFL-I">sound effect</a>  plays.</p>
-      <p>The tennis ball also obeys physics principles with our collision system, in that it bounces off walls and the ground. While another teammate was responsible for the math behind that, the shapes that I made still implemented methods to find normals to calculate the next velocity vector of the ball.</p>
-      <p>This same teammate was also the only one brave enough to figure out how to record a screencap in VR—you can watch real gameplay footage below:</p>
-        <br>
-        <iframe width="100%" height="100%"
-        src="https://www.youtube.com/embed/_EqMj3aLtVU">
+      <p>This project was made with virtual reality in mind, and so the user take on the perspective of Waluigi from the
+        Super Mario Bros video games series. (We considered adding in Waluigi's nose in the viewport, but decided it was
+        too nauseous for the user.) The premise is that Waluigi is upset at not being invited to Smash Ultimate, and is
+        taking his anger out at all of the other fighters who did get added.</p>
+      <p>Looking around, the user is surrounded in a Mario-esque environment, with floating targets in the air. The
+        targets all depict a random Smash Bros fighter new to the franchise, and the user can hurl tennis balls at them
+        using the VR remotes. The targets then give off a pseudo-randomly generated shatter effect upon being hit. Also,
+        every time the user throws a tennis ball, a Waluigi-themed <a
+          href="https://www.youtube.com/watch?v=dbe9WugFL-I">sound effect</a> plays.</p>
+      <p>The tennis ball also obeys physics principles with our collision system, in that it bounces off walls and the
+        ground. While another teammate was responsible for the math behind that, the shapes that I made still
+        implemented methods to find normals to calculate the next velocity vector of the ball.</p>
+      <p>This same teammate was also the only one brave enough to figure out how to record a screencap in VR—you can
+        watch real gameplay footage below:</p>
+      <br>
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_EqMj3aLtVU">
       </iframe>
     </div>
 
     <div class="content-caption">Implementation</div>
     <div>
-      <p>The whole project was built in Qt Creator, using the OpenGL graphics library, and written in C++ and some GLSL. Every element is built out of a set of primitive shapes: cubes, cylinders, spheres, and cones. All shapes are composed of triangles in different coordinates, and the circular ones can be instantiated with a variable number of wedges depending on the needed quality. For instance, a cylinder drawn with more "pie wedges" will look more like a cylinder, whereas if it only had four wedges, it would only look like a tall rectangular prism.</p>
-      <p>Each of these shapes are drawn in object space in unit sizes, and before a specific shape is drawn, its coordinates are multipled by a transformation matrix depending on its scale, translation, and rotation. To help with optimization, each shape is also rendered using the triangle strip primitive, which reduces the amount of coordinates we need to put through a buffer.</p>
-      <p>To detect collision, calls are made to transfer points from camera space to world space to object space. It is in object space when these primitive shapes can detect intersection or return normals vectors.</p>
-      <p>The textures were all drawn using uv mapping, which makes it easier to separate logic from the image front-end perspective and the primitive back-end perspective. All the shapes consult a unit square, mapped from (0, 0) to (1, 1), and sample from that square to determine where in the texture image it should draw color from. The images can map to the unit square on that end to account for settings like tiling.</p>
-      <p>The actual procedural generation algorithm was based off of poisson disk sampling. The space immediately surrounding the player is also cleared to not obstruct their views, since we assume the player does not have too much space to walk around in. The columns are also drawn with variable heights and random small offsets in their coordinates to simulate a less geometric environment. I remove a random number of scattered points and replace the columns with targets.</p>
-      <p>As for the target shattering effect (which you can see in the video), I generate a number of random white triangle shards and give them a random velocity and spin in the upwards direction. It's largely pseudo-random, and there are a few other factors, but the shatter effect is entirely independent and deletes itself when the animation is done.</p>
-      <p>Lastly, we also drew a skybox around the environment to improve the user's sense of presence. This skybox, along with the other textures, were based off of real Mario assets and drawn in Adobe Illustrator.</p>
+      <p>The whole project was built in Qt Creator, using the OpenGL graphics library, and written in C++ and some GLSL.
+        Every element is built out of a set of primitive shapes: cubes, cylinders, spheres, and cones. All shapes are
+        composed of triangles in different coordinates, and the circular ones can be instantiated with a variable number
+        of wedges depending on the needed quality. For instance, a cylinder drawn with more "pie wedges" will look more
+        like a cylinder, whereas if it only had four wedges, it would only look like a tall rectangular prism.</p>
+      <p>Each of these shapes are drawn in object space in unit sizes, and before a specific shape is drawn, its
+        coordinates are multipled by a transformation matrix depending on its scale, translation, and rotation. To help
+        with optimization, each shape is also rendered using the triangle strip primitive, which reduces the amount of
+        coordinates we need to put through a buffer.</p>
+      <p>To detect collision, calls are made to transfer points from camera space to world space to object space. It is
+        in object space when these primitive shapes can detect intersection or return normals vectors.</p>
+      <p>The textures were all drawn using uv mapping, which makes it easier to separate logic from the image front-end
+        perspective and the primitive back-end perspective. All the shapes consult a unit square, mapped from (0, 0) to
+        (1, 1), and sample from that square to determine where in the texture image it should draw color from. The
+        images can map to the unit square on that end to account for settings like tiling.</p>
+      <p>The actual procedural generation algorithm was based off of poisson disk sampling. The space immediately
+        surrounding the player is also cleared to not obstruct their views, since we assume the player does not have too
+        much space to walk around in. The columns are also drawn with variable heights and random small offsets in their
+        coordinates to simulate a less geometric environment. I remove a random number of scattered points and replace
+        the columns with targets.</p>
+      <p>As for the target shattering effect (which you can see in the video), I generate a number of random white
+        triangle shards and give them a random velocity and spin in the upwards direction. It's largely pseudo-random,
+        and there are a few other factors, but the shatter effect is entirely independent and deletes itself when the
+        animation is done.</p>
+      <p>Lastly, we also drew a skybox around the environment to improve the user's sense of presence. This skybox,
+        along with the other textures, were based off of real Mario assets and drawn in Adobe Illustrator.</p>
     </div>
 
     <div class="content-caption">Conclusion</div>
     <div>
-      <p>Coming up with a balanced procedurally generated scene was definitely the hardest part of this project. I spent a lot of time working just on a 2D screen, trying to approximate what it would look like when drawn to VR. My first prototypes came in with columns that were way too wide and tall, and the skybox had hills the size of mountains. It took many iterations of trial and error experimentation before coming up with a comfortable scene. I playtested it many times myself and spent hours in the lab fixing up assets and changing up the procedural generation parameters, before asking my teammates and other friends to test it themselves and gather their feedback. </p>
-      <p>Overall, this was a really fun and satisfying project to build, and a great way to cumulatively wrap the semester. We're looking into porting it to <a href="https://www.brown.edu/academics/early-cultures/resources-brown/yurt">the YURT</a>, which is Brown's larger virtual reality cave. </p>
+      <p>Coming up with a balanced procedurally generated scene was definitely the hardest part of this project. I spent
+        a lot of time working just on a 2D screen, trying to approximate what it would look like when drawn to VR. My
+        first prototypes came in with columns that were way too wide and tall, and the skybox had hills the size of
+        mountains. It took many iterations of trial and error experimentation before coming up with a comfortable scene.
+        I playtested it many times myself and spent hours in the lab fixing up assets and changing up the procedural
+        generation parameters, before asking my teammates and other friends to test it themselves and gather their
+        feedback. </p>
+      <p>Overall, this was a really fun and satisfying project to build, and a great way to cumulatively wrap the
+        semester. We're looking into porting it to <a
+          href="https://www.brown.edu/academics/early-cultures/resources-brown/yurt">the YURT</a>, which is Brown's
+        larger virtual reality cave. </p>
     </div>
 
 
   </div>
 
 </body>
+
 </html>

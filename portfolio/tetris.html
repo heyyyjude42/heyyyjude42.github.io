@@ -2,6 +2,7 @@
 <link href="../portfolio.css" rel="stylesheet">
 <link href="portfolio.css" rel="stylesheet">
 <html>
+
 <body>
   <div id="menu">
     <div class="horizontal-flex">
@@ -16,38 +17,67 @@
 
   <div id="title-box">
     <div class="title">TETRIS</div>
-    <div class="subtitle">Object-Oriented Programming</div>
+    <div class="subtitle">Object-Oriented Programming / Java & JavaFX / Nov 2017</div>
   </div>
 
   <div class="content-box">
     <div>
-      <p>Near the end of my first semester learning computer science, we were tasked with building a fully-functional game of Tetris with nothing but JavaFX. Note that this was not the final project for the course—that was Risk, which can be found <a href="http://www.juliewang.me/portfolio/risk.html">here</a>.</p>
-      <p>Nonetheless, I still took this as an opportunity to go above and beyond the required functionality and also implement other features, such as a preview shadow of where the block will fall, Tetrimino textures, and incrementing the speed as the game progresses along. I played a lot of Tetris in middle school, and I wanted to replicate that as closely as possible!</p>
+      <p>Near the end of my first semester learning computer science, we were tasked with building a fully-functional
+        game of Tetris with nothing but JavaFX. Note that this was not the final project for the course—that was Risk,
+        which can be found <a href="http://www.juliewang.me/portfolio/risk.html">here</a>.</p>
+      <p>Nonetheless, I still took this as an opportunity to go above and beyond the required functionality and also
+        implement other features, such as a preview shadow of where the block will fall, Tetrimino textures, and
+        incrementing the speed as the game progresses along. I played a lot of Tetris in middle school, and I wanted to
+        replicate that as closely as possible!</p>
     </div>
 
     <div class="content-caption">Gameplay</div>
     <div>
       <img class="img-float-right" src="../assets/portfolio/Tetris-Shiny.jpeg">
       <img class="img-float-right" src="../assets/portfolio/Tetris-Cartoon.jpeg">
-      <p>The game works exactly as you'd expect: Tetriminos fall from the top of the matrix to the bottom, and players can press the down arrow to manually make it fall one tile, or press space to hard drop it. Players can rotate with the up arrow and hold the block for another turn with the shift key. Pressing p pauses the game.</p>
-      <p>I did my best to simulate the same block colors as traditional Tetris, though my definition of "traditional Tetris" may or may not have been "TetrisFriends.com".</p>
-      <p>To the left, the pane displays the current score, as well as the level. As the level increments, blocks fall faster and faster. The box under them depicts which block is currently being held.</p>
-      <p>To the right, players can choose which block texture they'd like to use, out of a set of six: none, chiseled, blocky, shiny, cartoon, and puff. These were all inspired by textures I'd seen before, but made by hand in Adobe Illustrator. I applied a multiply effect to each image (which is just a grayscale jpeg) and overlaid them on top of each tile.</p>
+      <p>The game works exactly as you'd expect: Tetriminos fall from the top of the matrix to the bottom, and players
+        can press the down arrow to manually make it fall one tile, or press space to hard drop it. Players can rotate
+        with the up arrow and hold the block for another turn with the shift key. Pressing p pauses the game.</p>
+      <p>I did my best to simulate the same block colors as traditional Tetris, though my definition of "traditional
+        Tetris" may or may not have been "TetrisFriends.com".</p>
+      <p>To the left, the pane displays the current score, as well as the level. As the level increments, blocks fall
+        faster and faster. The box under them depicts which block is currently being held.</p>
+      <p>To the right, players can choose which block texture they'd like to use, out of a set of six: none, chiseled,
+        blocky, shiny, cartoon, and puff. These were all inspired by textures I'd seen before, but made by hand in Adobe
+        Illustrator. I applied a multiply effect to each image (which is just a grayscale jpeg) and overlaid them on top
+        of each tile.</p>
     </div>
 
     <div class="content-caption">Challenges</div>
     <div>
-      <p>Getting past the beginnings of this project was probably the hardest thing I'd ever done up until now—and it was basically entirely my fault. I had an idea for a design that wasn't recommended by the TAs at all, but I went ahead and did it out of curiosity. (To this day, I still don't regret it, and I think I learned a lot from this experience.) The short of it is that I chose to have no "Block" or "Piece" class, but instead stored the state of the board in a 2D array of colors. Another array held the coordinates of the currently active tile, which was wiped and redrawn with the next timeline tick. Rotation was done by multiplying each tile by a rotation matrix that brought it to the right place—that took too long to figure out and debug, against what the TAs had us do otherwise, which is just make each tile as a composite shape and rotate it graphically using JavaFX methods. But since I didn't have separate tiles for shapes, I couldn't do that. </p>
-      <p>Since I didn't have separate pieces, I ended up loading all the start coordinates in a constants class, which was longer than it needed to be. Between all the arrays and math, there was a point in time when I still couldn't get my tiles to fall correctly together in one place—they'd end up scattering across the board. I did figure it out in the end, and proceeded along much faster afterwards, but my design—while it technically works—just simply wasn't flexible nor clear. </p>
+      <p>Getting past the beginnings of this project was probably the hardest thing I'd ever done up until now—and it
+        was basically entirely my fault. I had an idea for a design that wasn't recommended by the TAs at all, but I
+        went ahead and did it out of curiosity. (To this day, I still don't regret it, and I think I learned a lot from
+        this experience.) The short of it is that I chose to have no "Block" or "Piece" class, but instead stored the
+        state of the board in a 2D array of colors. Another array held the coordinates of the currently active tile,
+        which was wiped and redrawn with the next timeline tick. Rotation was done by multiplying each tile by a
+        rotation matrix that brought it to the right place—that took too long to figure out and debug, against what the
+        TAs had us do otherwise, which is just make each tile as a composite shape and rotate it graphically using
+        JavaFX methods. But since I didn't have separate tiles for shapes, I couldn't do that. </p>
+      <p>Since I didn't have separate pieces, I ended up loading all the start coordinates in a constants class, which
+        was longer than it needed to be. Between all the arrays and math, there was a point in time when I still
+        couldn't get my tiles to fall correctly together in one place—they'd end up scattering across the board. I did
+        figure it out in the end, and proceeded along much faster afterwards, but my design—while it technically
+        works—just simply wasn't flexible nor clear. </p>
     </div>
 
     <div class="content-caption">Conclusion</div>
     <div>
-      <p>Nonetheless, I think building this project taught me a lot about foresight and planning ahead. I had thought ahead and figured that the matrix would give me everything I needed—and while it did, I could've achieved the same product with other, simpler means. I wouldn't recommend this Tetris design to anyone else, but I don't regret having done it at all, because I'd come to value what I learned in much bigger programming projects down the line. Struggling is good for success. :) </p>
+      <p>Nonetheless, I think building this project taught me a lot about foresight and planning ahead. I had thought
+        ahead and figured that the matrix would give me everything I needed—and while it did, I could've achieved the
+        same product with other, simpler means. I wouldn't recommend this Tetris design to anyone else, but I don't
+        regret having done it at all, because I'd come to value what I learned in much bigger programming projects down
+        the line. Struggling is good for success. :) </p>
     </div>
 
 
   </div>
 
 </body>
+
 </html>

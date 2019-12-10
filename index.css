@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600');
-
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,600");
 
 /*
 BACKGROUND: #40312f
@@ -16,7 +15,7 @@ body {
   font-family: "Crimson Text", serif;
   font-style: "book";
   font-weight: "book";
-  font-size: 115%;
+  font-size: 100%;
   color: #d4cac9;
 }
 
@@ -200,7 +199,7 @@ a:hover {
 }
 
 .color-block {
-   padding: 0 20%;
+  padding: 0 20%;
 }
 
 #bottom-footer {

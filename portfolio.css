@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600');
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,600");
 
 body {
   background: #fcfbf9;
@@ -9,7 +9,7 @@ body {
   font-family: "Crimson Text", serif;
   font-style: "book";
   font-weight: "book";
-  font-size: 115%;
+  font-size: 100%;
   color: #40312f;
 }
 
@@ -68,7 +68,7 @@ body {
 
 .title {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 110%;
+  font-size: 160%;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -85,8 +85,9 @@ body {
 #portfolio {
   padding: 3em 4em;
   display: grid;
-  grid-gap: 2em;
   grid-template-columns: 1fr 1fr 1fr;
+  column-count: 3;
+  column-gap: 0em;
 }
 
 @media screen and (max-width: 800px) {
@@ -102,10 +103,11 @@ body {
 
 .portfolio-item {
   display: inline-block;
-  width: 100%;
+  width: 90%;
   padding: 0.8em;
   padding-bottom: 2em;
   font-size: 90%;
+  line-height: 140%;
 }
 
 .portfolio-item:hover {
@@ -124,7 +126,7 @@ body {
 
 .portfolio-item-title {
   font-family: "Crimson Text", serif;
-  font-size: 140%;
+  font-size: 160%;
   font-style: italic;
   line-height: 130%;
   color: #c74664;
@@ -134,7 +136,7 @@ body {
 .portfolio-item-subtitle {
   font-family: "Josefin Sans", sans-serif;
   padding-bottom: 0.5em;
-  font-size: 90%;
+  font-size: 95%;
   line-height: 160%;
 }
 
@@ -161,10 +163,10 @@ body {
 }
 
 .content-caption {
-    font-family: "Crimson Text", serif;
-    font-size: 140%;
-    font-style: italic;
-    line-height: 130%;
-    color: #c74664;
-    margin-top: 1em;
+  font-family: "Crimson Text", serif;
+  font-size: 140%;
+  font-style: italic;
+  line-height: 130%;
+  color: #c74664;
+  margin-top: 1em;
 }
