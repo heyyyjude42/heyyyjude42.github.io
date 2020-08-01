@@ -1,14 +1,18 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // set the text stuff to the bottom
   $("#home-body").css({ top: $('#bg').height() - 50 });
   $("#bg1").css({ top: "0em" });
   $("#title-box").css({ top: ($('#bg').height() / 5) });
 
-  $(document).scroll( function () {
+  $(document).load(function () {
     parallax();
   });
 
-  $(window).resize( function() {
+  $(document).scroll(function () {
+    parallax();
+  });
+
+  $(window).resize(function () {
     parallax();
   })
 });

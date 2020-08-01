@@ -20,7 +20,7 @@ body {
 
 p,
 li {
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 
 ::selection {
@@ -69,7 +69,7 @@ li {
   top: 0;
   left: 0;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 2em;
+  font-size: 2.3em;
 }
 
 #title-contents {
@@ -90,13 +90,13 @@ li {
   position: absolute;
   padding: 4em 0;
   background: #40312f;
-  line-height: 160%;
+  line-height: 180%;
 }
 
 .title {
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 1.6em;
+  font-size: 2em;
 }
 
 a {
@@ -130,7 +130,7 @@ a:hover {
   width: 20%;
   line-height: 210%;
   color: #b58b94;
-  font-size: 0.9em;
+  font-size: 1.1em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -138,7 +138,7 @@ a:hover {
 
 .section-caption {
   font-family: "Crimson Text", serif;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-style: italic;
   line-height: 130%;
   color: #b58b94;
@@ -153,7 +153,7 @@ a:hover {
 .section-subcaption {
   font-family: "Josefin Sans", sans-serif;
   padding-bottom: 0.5em;
-  font-size: 0.8em;
+  font-size: 1.1em;
   line-height: 160%;
   /* color: #b58b94; */
 }
@@ -208,7 +208,7 @@ a:hover {
 
 #bottom-footer {
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: #b8aba9;
   line-height: 150%;
 }
@@ -216,6 +216,6 @@ a:hover {
 #last-updated {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 2px;
 }
