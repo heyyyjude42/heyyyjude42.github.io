@@ -3,10 +3,7 @@ $(document).ready(function () {
   $("#home-body").css({ top: $('#bg').height() - 50 });
   $("#bg1").css({ top: "0em" });
   $("#title-box").css({ top: ($('#bg').height() / 5) });
-
-  $(document).load(function () {
-    parallax();
-  });
+  parallax();
 
   $(document).scroll(function () {
     parallax();
