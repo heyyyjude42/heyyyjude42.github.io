@@ -3,19 +3,18 @@ $(document).ready(function () {
   $("#home-body").css({ top: $('#bg').height() - 50 });
   $("#bg1").css({ top: "0em" });
   $("#title-box").css({ top: ($('#bg').height() / 5) });
-  parallax();
+  parallax(0);
 
   $(document).scroll(function () {
-    parallax();
+    parallax($(window).scrollTop());
   });
 
   $(window).resize(function () {
-    parallax();
+    parallax($(window).scrollTop());
   })
 });
 
-function parallax() {
-  const scrollTop = $(window).scrollTop();
+function parallax(scrollTop) {
   $("#bg1").css({ top: -(scrollTop / 30) });
   $("#bg2").css({ top: scrollTop / 4 });
   $("#bg3").css({ top: scrollTop / 3.3 });
